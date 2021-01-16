@@ -218,9 +218,9 @@ download \
   "https://www.libsdl.org/release/"
 
 download \
-  "n4.0.tar.gz" \
-  "ffmpeg4.0.tar.gz" \
-  "4749a5e56f31e7ccebd3f9924972220f" \
+  "n4.3.1.tar.gz" \
+  "ffmpeg4.3.1.tar.gz" \
+  "426ca412ca61634a248c787e29507206" \
   "https://github.com/FFmpeg/FFmpeg/archive"
 
 [ $download_only -eq 1 ] && exit 0
