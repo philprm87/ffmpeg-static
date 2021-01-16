@@ -212,6 +212,12 @@ download \
   "https://github.com/xiph/speex/archive/"
 
 download \
+  "SDL2-2.0.12.tar.gz" \
+  "SDL2-2.0.12.tar.gz" \
+  "783b6f2df8ff02b19bb5ce492b99c8ff" \
+  "https://www.libsdl.org/release/"
+
+download \
   "n4.0.tar.gz" \
   "ffmpeg4.0.tar.gz" \
   "4749a5e56f31e7ccebd3f9924972220f" \
@@ -408,6 +414,14 @@ cd $BUILD_DIR/speex*
 [ $rebuild -eq 1 -a -f Makefile ] && make distclean || true
 ./autogen.sh
 ./configure --prefix=$TARGET_DIR --disable-shared
+make -j $jval
+make install
+
+# SDL2
+echo "*** Building FFmpeg ***"
+cd $BUILD_DIR/SDL2*
+[ $rebuild -eq 1 -a -f Makefile ] && make distclean || true
+./configure --prefix=$TARGET_DIR --disable-shared --enable-static
 make -j $jval
 make install
 
